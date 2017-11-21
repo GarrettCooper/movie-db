@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Names from './names.js';
 import Movies from './movies.js';
@@ -9,10 +8,10 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { 
+    this.state = {
       name_value: 'John',
       names: ['diego', 'kira', 'andy', 'john'],
-      movies: [{Title: 'am I working?'}]          
+      movies: [{Title: 'am I working?'}]
   };
 
     this.change_textbox = this.change_textbox.bind(this);
@@ -37,13 +36,12 @@ class App extends Component {
       }
     );
   }
-  
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1>Event Finder</h1>
         </header>
         <p className="App-intro">
           Let's make some stuff
