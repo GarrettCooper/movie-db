@@ -9,8 +9,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      movie_value: '',
-      movies: [{Title: ''}]
+      events: [{title: ''}],
+      event_value: ''
     };
 
     this.change_textbox = this.change_textbox.bind(this);
@@ -18,13 +18,13 @@ class App extends Component {
   }
 
   change_textbox(event) {
-    this.setState({ movie_value: event.target.value });
+    this.setState({event_value: event.target.value});
   }
 
   click_search(event) {
-    axios.get(`http://www.omdbapi.com/?s=${this.state.name_value}&apikey=88025416`).then(
+    axios.get(`http://replayfxcalendar.azurewebsites.net/public/=${this.state.event_value}`).then(
       (response) => {
-        this.setState({movies: response.data.Search})
+        this.setState({events: response.data.Search})
       }
     );
   }
@@ -38,9 +38,9 @@ class App extends Component {
         <p className="App-intro">
           Please search for event information
         </p>
-        <input type="text" value={this.state.movie_value} onChange={this.change_textbox}/>
+        <input type="text" value={this.state.events_value} onChange={this.change_textbox}/>
         <button onClick={this.click_search}>Search</button>
-        <Movies list_of_movies = {this.state.movies} />
+        <Events list_of_events = {this.state.events} />
       </div>
     );
   }
