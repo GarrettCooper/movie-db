@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Names from './names.js';
-import Movies from './movies.js';
+//import Movies from './movies.js';
+import Events from './events.js';
 import axios from 'axios';
 
 class App extends Component {
@@ -9,24 +9,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      name_value: 'John',
-      names: ['diego', 'kira', 'andy', 'john'],
-      movies: [{Title: 'am I working?'}]
-  };
+      movie_value: '',
+      movies: [{Title: ''}]
+    };
 
     this.change_textbox = this.change_textbox.bind(this);
-    this.click_button = this.click_button.bind(this);
     this.click_search = this.click_search.bind(this);
   }
 
   change_textbox(event) {
-    this.setState({ name_value: event.target.value });
-  }
-
-  click_button(event) {
-    var temp = this.state.names;
-    temp.push(this.state.name_value);
-    this.setState({ names: temp, name_value: ''});
+    this.setState({ movie_value: event.target.value });
   }
 
   click_search(event) {
@@ -44,11 +36,10 @@ class App extends Component {
           <h1>Event Finder</h1>
         </header>
         <p className="App-intro">
-          Let's make some stuff
+          Please search for event information
         </p>
-        <input type="text" value={this.state.name_value} onChange={this.change_textbox}/>
-        <button onClick={this.click_search}>Add Name</button>
-        <Names list_of_names={this.state.names} />
+        <input type="text" value={this.state.movie_value} onChange={this.change_textbox}/>
+        <button onClick={this.click_search}>Search</button>
         <Movies list_of_movies = {this.state.movies} />
       </div>
     );
