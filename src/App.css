@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 .App {
   text-align: center;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 75px;
+  padding: 10px;
   color: white;
 }
 
@@ -15,4 +17,19 @@
 
 .App-intro {
   font-size: large;
+}
+
+.Events-Style {
+  color: red;
+  font-family: 'Press Start 2P', cursive;
+  padding: 20px;
+  border: 5px dotted black;
+  margin: 10px;
+  animation: flashing 1s infinite;
+}
+
+@keyframes flashing {
+  0% {border-color: black;}
+  50% {border-color: pink;}
+  100% {border-color: lime;}
 }

@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      events: [{title: ''},{startTime: ''}],
+      events: [{title:'' },{startTime:'' }],
       event_value: ''
     };
 
@@ -40,7 +40,7 @@ class App extends Component {
         </p>
         <input type="text" value={this.state.events_value} onChange={this.change_textbox}/>
         <button onClick={this.click_search}>Search</button>
-        <Events list_of_events = {this.state.events} />
+        <Events list_of_events = {this.state.events}/>
       </div>
     );
   }
