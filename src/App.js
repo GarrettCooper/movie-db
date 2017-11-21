@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      events: [{title: ''}],
+      events: [{title: ''},{startTime: ''}],
       event_value: ''
     };
 
@@ -22,9 +22,9 @@ class App extends Component {
   }
 
   click_search(event) {
-    axios.get(`http://replayfxcalendar.azurewebsites.net/public/=${this.state.event_value}`).then(
+    axios.get("http://replayfxcalendar.azurewebsites.net/public/").then(
       (response) => {
-        this.setState({events: response.data.Search})
+        this.setState({events: response.data})
       }
     );
   }

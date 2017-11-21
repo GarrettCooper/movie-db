@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 class Events extends Component {
     render() {
-        return <ul> {this.props.list_of_events.map((values, i) =>
+      return <div> {this.props.list_of_events.map((values, i) =>
         {
-            return <p>{values.title}</p>
+            return (<div className="Events-Style" key={i}>{values.title} - {values.startTime}</div>)
         }
-      )} </ul>;
+      )} </div>;
     }
 }
 
